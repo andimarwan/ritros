@@ -3,477 +3,720 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ritros.co | Offroad & Tough Curated G-Shock</title>
-    <!-- Google Fonts: Permanent Marker (Style Brush/Grunge) & Oswald (Offroad Bold) -->
+    <title>Ritros | Curated & Quality G-Shock Watches</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Permanent+Marker&family=Teko:wght@700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset Basic */
+        /* Variables */
+        :root {
+            --bg-color: #f8f7f5;
+            --card-bg: #ffffff;
+            --primary-dark: #111111;
+            --accent-olive: #3a483e;
+            --accent-olive-hover: #2c372f;
+            --text-main: #222222;
+            --text-muted: #666666;
+            --border-color: #e5e3de;
+            --star-color: #d4a359;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
-        /* Dominan Warna Putih/Off-White dengan Efek Tekstur Offroad */
         body {
-            background-color: #f7f7f7;
-            background-image: 
-                radial-gradient(#d1d1d1 1px, transparent 1px),
-                linear-gradient(to bottom, #ffffff, #eaeaea);
-            background-size: 20px 20px, 100% 100%;
-            color: #111111;
-            line-height: 1.5;
-            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
         .container {
-            width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header / Navbar Style Offroad */
-        .navbar {
-            background-color: #ffffff;
-            border-bottom: 5px solid #111111;
+        /* Header / Navbar */
+        header {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            padding: 15px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .nav-container {
+        .nav-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .logo {
-            font-family: 'Teko', sans-serif;
-            font-size: 42px;
+        .logo-img {
+            height: 32px;
+            display: block;
+            filter: brightness(0) invert(1); /* Membuat logo transparan/putih pada navbar gelap jika diperlukan */
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: #111;
-            text-transform: uppercase;
-            line-height: 1;
+            letter-spacing: 0.5px;
         }
 
-        .logo span {
-            color: #d90429;
-            font-family: 'Permanent Marker', cursive;
-            font-size: 32px;
-        }
-
-        .nav-links {
+        nav ul {
             display: flex;
+            list-style: none;
+            gap: 30px;
             align-items: center;
-            gap: 20px;
         }
 
-        .nav-links a {
-            color: #111;
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.2s;
+        nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: #dddddd;
+            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: #d90429;
+        nav a:hover {
+            color: #ffffff;
         }
 
-        /* Tombol IG Efek Brush Edge */
-        .ig-btn {
-            background: #111111;
-            color: #ffffff !important;
-            padding: 8px 20px;
-            clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
-            transition: 0.3s;
+        .nav-icons {
+            display: flex;
+            gap: 18px;
+            align-items: center;
         }
 
-        .ig-btn:hover {
-            background: #d90429;
+        .nav-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 2;
+            cursor: pointer;
         }
 
-        /* Hero Section dengan Tampilan Bright Offroad */
-        .hero {
-            padding: 80px 20px;
-            background: #ffffff;
-            border-bottom: 4px dashed #111111;
+        /* Hero Banner Section */
+        .hero-banner {
             position: relative;
-            text-align: center;
-        }
-
-        .hero::before {
-            content: "RITROS";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Teko', sans-serif;
-            font-size: 220px;
-            color: rgba(0, 0, 0, 0.03);
-            font-weight: 700;
-            z-index: 0;
-            pointer-events: none;
+            background: #111;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: left;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 850px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
-        /* Badge Efek Brush Grunge */
-        .badge {
-            font-family: 'Permanent Marker', cursive;
-            background-color: #d90429;
-            color: #fff;
-            padding: 6px 18px;
-            font-size: 16px;
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .btn-olive {
             display: inline-block;
-            transform: rotate(-2deg);
-            box-shadow: 3px 3px 0px #111;
-            margin-bottom: 15px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Teko', sans-serif;
-            font-size: 72px;
-            line-height: 0.95;
-            letter-spacing: 1px;
-            color: #111;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 0px #fff, 4px 4px 0px #111;
-        }
-
-        .hero-content p {
-            color: #444;
-            font-size: 18px;
-            font-weight: 700;
-            max-width: 650px;
-            margin: 0 auto 30px;
-        }
-
-        /* Tombol Cut-corner Offroad */
-        .btn-primary {
-            display: inline-block;
-            padding: 16px 40px;
-            background-color: #111111;
+            background-color: var(--accent-olive);
             color: #ffffff;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
-            transition: 0.3s;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #d90429;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(217, 4, 41, 0.3);
-        }
-
-        /* Catalog Section */
-        .catalog-section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-family: 'Permanent Marker', cursive;
-            font-size: 42px;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #111;
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 120%;
-            height: 8px;
-            background: #d90429;
-            position: absolute;
-            bottom: -5px;
-            left: -10%;
-            z-index: -1;
-            clip-path: polygon(0 0, 100% 20%, 95% 100%, 5% 80%);
-        }
-
-        /* Grid System Desktop */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-        }
-
-        /* Kartu Produk Gaya Offroad / Rough Edge */
-        .product-card {
-            background-color: #ffffff;
-            border: 3px solid #111111;
-            position: relative;
-            box-shadow: 8px 8px 0px #111111;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px #d90429;
-            border-color: #d90429;
-        }
-
-        /* Tag Kondisi Grunge */
-        .product-tag {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: #111111;
-            color: #ffffff;
-            padding: 6px 12px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            z-index: 2;
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-        }
-
-        .img-wrapper {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background-color: #f0f0f0;
-            border-bottom: 3px solid #111111;
-            position: relative;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-
-        .product-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .product-info {
-            padding: 22px;
-        }
-
-        .product-info h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: #111;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-        }
-
-        .product-info .condition {
+            padding: 12px 28px;
             font-size: 14px;
-            color: #666;
-            font-weight: 700;
-            margin-bottom: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
         }
 
-        .product-info .price {
-            font-family: 'Teko', sans-serif;
+        .btn-olive:hover {
+            background-color: var(--accent-olive-hover);
+        }
+
+        /* Page Titles & Headers */
+        .section-header {
+            text-align: center;
+            padding: 50px 0 30px;
+        }
+
+        .section-header h1 {
             font-size: 32px;
             font-weight: 700;
-            color: #d90429;
-            line-height: 1;
-            margin-bottom: 18px;
+            color: var(--text-main);
+            margin-bottom: 8px;
         }
 
-        /* Tombol Beli WA Grunge */
-        .btn-wa {
-            width: 100%;
-            padding: 14px;
-            background-color: #25D366;
-            color: #ffffff;
-            border: 2px solid #111111;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 4px 4px 0px #111111;
-            transition: 0.2s;
-        }
-
-        .btn-wa:hover {
-            background-color: #1eb856;
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px #111111;
-        }
-
-        /* Footer Offroad */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #ffffff;
-            border-top: 4px solid #111111;
-            color: #111;
-            font-weight: 700;
+        .section-header p {
+            color: var(--text-muted);
             font-size: 15px;
         }
 
-        /* Responsive Mobile & Tablet */
-        @media screen and (max-width: 992px) {
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .hero-content h1 {
-                font-size: 56px;
-            }
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
-        @media screen and (max-width: 600px) {
-            .hero {
-                padding: 50px 15px;
-            }
-            .hero-content h1 {
-                font-size: 44px;
-            }
-            .hero-content p {
-                font-size: 15px;
-            }
-            .section-title {
-                font-size: 32px;
-            }
+        .filter-select {
+            padding: 10px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            min-width: 160px;
+        }
+
+        /* Catalog Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .product-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .product-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .btn-view {
+            background-color: var(--accent-olive);
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .btn-view:hover {
+            background-color: var(--accent-olive-hover);
+        }
+
+        /* Trust Badges / Customer Stories */
+        .trust-section {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin: 50px 0;
+            background-color: #f3f1ec;
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .trust-icon {
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-olive);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* Single Product Detail View (Mockup) */
+        .product-detail-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .gallery-main {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 12px;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .detail-info h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: var(--star-color);
+        }
+
+        .price-large {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .checklist {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .checklist li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .btn-wa-green {
+            background-color: #2e5339;
+            color: #fff;
+            width: 100%;
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .btn-wa-green:hover {
+            background-color: #23402c;
+        }
+
+        .wa-subtext {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .specs-box {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .specs-box h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .specs-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        /* Review Section */
+        .reviews-section {
+            margin: 40px 0;
+        }
+
+        .reviews-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 18px;
+            border-radius: 6px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            max-width: 500px;
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-author {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .review-text {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Instagram Section */
+        .ig-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .ig-grid img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: #888888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 13px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
             .product-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
             }
-            .img-wrapper {
-                height: 250px;
+
+            .detail-grid {
+                grid-template-columns: 1fr;
             }
-            .logo {
-                font-size: 32px;
+
+            .hero-title {
+                font-size: 36px;
             }
-            .nav-links a {
-                font-size: 13px;
+
+            .ig-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                display: none; /* Disembunyikan di mobile untuk kesederhanaan */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">RITROS<span>.CO</span></div>
-            <nav class="nav-links">
-                <a href="#catalog">Katalog</a>
-                <a href="https://instagram.com/ritros.co" target="_blank" class="ig-btn">Instagram</a>
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-box">
+                <!-- Jika logo.png ada di repo, gunakan tag img ini -->
+                <img src="logo.png" alt="Ritros" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+                <span id="alt-logo" class="logo-text" style="display:none;">Ritros</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#why">Why Ritros?</a></li>
+                    <li><a href="#care">Conditions & Care</a></li>
+                </ul>
             </nav>
+            <div class="nav-icons">
+                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero Banner (Halaman Utama) -->
+    <section class="hero-banner">
         <div class="hero-content">
-            <span class="badge">CURATED G-SHOCK STORE</span>
-            <h1>BUILT TO LAST.<br>READY FOR OFFROAD.</h1>
-            <p>Koleksi jam tangan G-Shock second original terkurasi dengan kondisi mulus dan harga terjangkau.</p>
-            <a href="#catalog" class="btn-primary">Jelajahi Katalog</a>
+            <h1 class="hero-title">Curated Toughness.<br>Authentic Style.</h1>
+            <a href="#shop" class="btn-olive">Explore Collection</a>
         </div>
     </section>
 
-    <!-- Catalog Section -->
-    <section id="catalog" class="catalog-section">
-        <div class="container">
-            <h2 class="section-title">READY STOCK</h2>
+    <!-- Shop Catalog Section -->
+    <main class="container" id="shop">
+        <div class="section-header">
+            <h1>Shop G-Shock Collection</h1>
+            <p>Curated & Quality G-Shock Watches.</p>
+        </div>
+
+        <!-- Filter Component -->
+        <div class="filter-bar">
+            <select class="filter-select">
+                <option>All Categories</option>
+                <option>DW Series</option>
+                <option>GA Series</option>
+            </select>
+            <select class="filter-select">
+                <option>Grade A</option>
+                <option>Grade B</option>
+            </select>
+            <select class="filter-select">
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+            </select>
+            <button class="btn-olive" style="padding: 10px 24px;">Filter</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
             
-            <div class="product-grid">
-                
-                <!-- Produk 1 -->
-                <div class="product-card">
-                    <div class="product-tag">Condition 9.5/10</div>
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="G-Shock DW-5600BB">
-                    </div>
-                    <div class="product-info">
-                        <h3>G-Shock DW-5600BB-1DR</h3>
-                        <p class="condition">Kelengkapan: Fullset Box & Paper</p>
-                        <div class="price">Rp 850.000</div>
-                        <button class="btn-wa" onclick="orderWhatsApp('G-Shock DW-5600BB-1DR', '850.000')">
-                            Beli via WhatsApp
-                        </button>
+            <!-- Item 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" class="product-img" alt="G-Shock DW-6000">
+                <div class="product-body">
+                    <div class="product-name">DW-6900 "Sniper"</div>
+                    <div class="product-meta">Grade A | 1996</div>
+                    <div class="product-footer">
+                        <div class="product-price">Rp 1.250.000</div>
+                        <a href="#detail-sample" class="btn-view">View Details</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Produk 2 -->
-                <div class="product-card">
-                    <div class="product-tag">Condition 9/10</div>
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" alt="G-Shock GA-2100">
-                    </div>
-                    <div class="product-info">
-                        <h3>G-Shock GA-2100-1A1 "CasiOak"</h3>
-                        <p class="condition">Kelengkapan: Unit Only (Replacement Box)</p>
-                        <div class="price">Rp 1.100.000</div>
-                        <button class="btn-wa" onclick="orderWhatsApp('G-Shock GA-2100-1A1 CasiOak', '1.100.000')">
-                            Beli via WhatsApp
-                        </button>
+            <!-- Item 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" class="product-img" alt="G-Shock GA-2100">
+                <div class="product-body">
+                    <div class="product-name">G-Shock GA-2100 "CasiOak"</div>
+                    <div class="product-meta">Grade A | 2020</div>
+                    <div class="product-footer">
+                        <div class="product-price">Rp 1.450.000</div>
+                        <a href="#detail-sample" class="btn-view">View Details</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Produk 3 -->
-                <div class="product-card">
-                    <div class="product-tag">Condition 9.8/10</div>
-                    <div class="img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=600&q=80" alt="G-Shock GX-56BB">
-                    </div>
-                    <div class="product-info">
-                        <h3>G-Shock GX-56BB-1DR "King Kong"</h3>
-                        <p class="condition">Kelengkapan: Fullset Tag & Tin Can</p>
-                        <div class="price">Rp 1.450.000</div>
-                        <button class="btn-wa" onclick="orderWhatsApp('G-Shock GX-56BB-1DR King Kong', '1.450.000')">
-                            Beli via WhatsApp
-                        </button>
+        </div>
+
+        <!-- Single Product Detail Section (Contoh Tampilan Detail Produk) -->
+        <div class="product-detail-section" id="detail-sample">
+            <div class="detail-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80" class="gallery-main" alt="G-Shock DW-6900">
+                    <div class="gallery-thumbs">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&q=80" class="thumb">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80" class="thumb">
+                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=200&q=80" class="thumb">
                     </div>
                 </div>
+                <div class="detail-info">
+                    <h2>G-Shock DW-6900 "Sniper"</h2>
+                    <div class="rating-row">
+                        <span>Grade A | 1996</span>
+                        <span class="stars">★★★★★</span>
+                        <span>(25 Reviews)</span>
+                    </div>
+                    <div class="price-large">Rp 1.250.000</div>
 
+                    <ul class="checklist">
+                        <li><span style="color:var(--accent-olive);">✓</span> Berfungsi Normal</li>
+                        <li><span style="color:var(--accent-olive);">✓</span> Shock & Water Resistant</li>
+                        <li><span style="color:var(--accent-olive);">✓</span> Grade A Kondisi Bagus</li>
+                    </ul>
+
+                    <button class="btn-wa-green" onclick="orderWhatsApp('G-Shock DW-6900 Sniper', '1.250.000')">
+                        Chat via WhatsApp untuk Beli
+                    </button>
+                    <div class="wa-subtext">Pesan dengan cepat lewat WhatsApp</div>
+
+                    <div class="specs-box">
+                        <h4>Product Details</h4>
+                        <div class="specs-item">
+                            <span>🕒</span> Tahun Produksi: 1996
+                        </div>
+                        <div class="specs-item">
+                            <span>🔧</span> Kondisi: Grade A, Minor Scratch
+                        </div>
+                        <div class="specs-item">
+                            <span>⚡</span> Fitur: Alarm, Backlight, 200M Water Resistant
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- Trust Badges -->
+        <div class="trust-section">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Original & Tested</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Curated Selection</span>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">✓</div>
+                    <span>Fast Shipping</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="reviews-section">
+            <h3>Customer Reviews</h3>
+            <div class="review-card">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80" class="review-avatar" alt="Adi P.">
+                <div>
+                    <div class="review-author">Adi P. <span class="stars">★</span></div>
+                    <div class="review-text">Jam keren banget, sesuai deskripsi. Respon cepat!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Community Section -->
+        <div class="ig-section">
+            <h2 style="font-size: 22px; font-weight:700;">Join Our Community</h2>
+            <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Follow Us on Instagram @ritros.co</p>
+            
+            <div class="ig-grid">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&q=80">
+                <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=300&q=80">
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80">
+                <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=300&q=80">
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=300&q=80">
+            </div>
+
+            <a href="https://instagram.com/ritros.co" target="_blank" class="btn-olive">Follow Us</a>
+        </div>
+
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <strong>ritros.co</strong> - Curated G-Shock Store.</p>
+        <div class="container">
+            <p>&copy; 2026 Ritros.co. Curated & Quality G-Shock Store.</p>
+        </div>
     </footer>
 
     <script>
-        // GANTI NOMOR WHATSAPP KAMU DI SINI (Gunakan format 62...)
-        const NOMOR_WA = "6281234567890"; 
+        const NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp milikmu (format 62...)
 
         function orderWhatsApp(namaProduk, harga) {
-            const pesan = `Halo ritros.co, saya ingin membeli jam tangan:\n\n` +
+            const pesan = `Halo Ritros, saya berminat untuk membeli:\n\n` +
                           `*Produk:* ${namaProduk}\n` +
                           `*Harga:* Rp ${harga}\n\n` +
                           `Apakah produk ini masih ready?`;
