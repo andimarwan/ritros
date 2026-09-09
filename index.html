@@ -7,20 +7,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables */
         :root {
-            --bg-color: #f8f7f5;
+            --bg-color: #f7f6f2;
             --card-bg: #ffffff;
-            --primary-dark: #111111;
-            --accent-olive: #3a483e;
-            --accent-olive-hover: #2c372f;
-            --text-main: #222222;
+            --nav-bg: #0d0d0d;
+            --accent-green: #2d4a3e;
+            --accent-green-hover: #1e332a;
+            --text-dark: #111111;
             --text-muted: #666666;
-            --border-color: #e5e3de;
-            --star-color: #d4a359;
+            --border-light: #e2e0d9;
+            --star-gold: #d4a359;
         }
 
         * {
@@ -32,8 +31,8 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            color: var(--text-dark);
+            line-height: 1.5;
         }
 
         a {
@@ -41,21 +40,20 @@
             color: inherit;
         }
 
-        /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1120px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header / Navbar */
+        /* HEADER & NAVBAR */
         header {
-            background-color: var(--primary-dark);
+            background-color: var(--nav-bg);
             color: #ffffff;
             padding: 16px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-wrapper {
@@ -64,30 +62,24 @@
             align-items: center;
         }
 
-        .logo-img {
-            height: 32px;
+        /* LOGO SVG INTEGRATED */
+        .brand-logo-svg {
+            height: 38px;
+            width: auto;
             display: block;
-            filter: brightness(0) invert(1); /* Membuat logo transparan/putih pada navbar gelap jika diperlukan */
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 32px;
             align-items: center;
         }
 
         nav a {
             font-size: 14px;
             font-weight: 500;
-            color: #dddddd;
+            color: #d1d1d1;
             transition: color 0.2s;
         }
 
@@ -97,73 +89,77 @@
 
         .nav-icons {
             display: flex;
-            gap: 18px;
+            gap: 20px;
             align-items: center;
         }
 
         .nav-icons svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             fill: none;
             stroke: #ffffff;
             stroke-width: 2;
             cursor: pointer;
         }
 
-        /* Hero Banner Section */
+        /* HERO BANNER - BESAR & PROPORSIAL */
         .hero-banner {
+            min-height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             position: relative;
-            background: #111;
-            color: #fff;
-            padding: 100px 20px;
-            text-align: left;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=1600&q=80');
-            background-size: cover;
-            background-position: center;
+            padding: 120px 20px;
         }
 
         .hero-content {
-            max-width: 1100px;
+            max-width: 1120px;
             margin: 0 auto;
+            width: 100%;
+            color: #ffffff;
         }
 
         .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 52px;
+            font-size: 64px;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            letter-spacing: -0.5px;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 28px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         .btn-olive {
             display: inline-block;
-            background-color: var(--accent-olive);
+            background-color: var(--accent-green);
             color: #ffffff;
-            padding: 12px 28px;
-            font-size: 14px;
+            padding: 14px 32px;
+            font-size: 15px;
             font-weight: 600;
             border-radius: 4px;
-            transition: background-color 0.2s;
+            transition: all 0.2s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .btn-olive:hover {
-            background-color: var(--accent-olive-hover);
+            background-color: var(--accent-green-hover);
+            transform: translateY(-2px);
         }
 
-        /* Page Titles & Headers */
+        /* SECTION HEADER */
         .section-header {
             text-align: center;
-            padding: 50px 0 30px;
+            padding: 60px 0 30px;
         }
 
         .section-header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 8px;
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
         }
 
         .section-header p {
@@ -171,68 +167,73 @@
             font-size: 15px;
         }
 
-        /* Filter Bar */
+        /* FILTER BAR */
         .filter-bar {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             flex-wrap: wrap;
         }
 
         .filter-select {
             padding: 10px 16px;
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-light);
             border-radius: 4px;
             font-size: 14px;
-            color: var(--text-main);
+            color: var(--text-dark);
             outline: none;
-            min-width: 160px;
+            min-width: 170px;
         }
 
-        /* Catalog Product Grid */
+        /* CATALOG GRID */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 60px;
+            gap: 32px;
+            margin-bottom: 70px;
         }
 
         .product-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-light);
             border-radius: 6px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
 
         .product-img {
             width: 100%;
-            height: 320px;
+            height: 340px;
             object-fit: cover;
             background-color: #f0f0f0;
         }
 
         .product-body {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .product-name {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 700;
             margin-bottom: 4px;
-            color: var(--text-main);
         }
 
         .product-meta {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .product-footer {
@@ -240,75 +241,20 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
-            padding-top: 10px;
         }
 
         .product-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-main);
+            font-size: 20px;
+            font-weight: 800;
         }
 
-        .btn-view {
-            background-color: var(--accent-olive);
-            color: #ffffff;
-            padding: 10px 20px;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-
-        .btn-view:hover {
-            background-color: var(--accent-olive-hover);
-        }
-
-        /* Trust Badges / Customer Stories */
-        .trust-section {
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 40px 0;
-            margin: 50px 0;
-            background-color: #f3f1ec;
-        }
-
-        .trust-grid {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            text-align: center;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--text-main);
-        }
-
-        .trust-icon {
-            width: 28px;
-            height: 28px;
-            background-color: var(--accent-olive);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        /* Single Product Detail View (Mockup) */
+        /* SINGLE DETAIL SHOWCASE (SESUAI GAMBAR REFERENSI) */
         .product-detail-section {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-light);
             border-radius: 8px;
-            padding: 30px;
-            margin: 40px 0;
+            padding: 35px;
+            margin: 50px 0 70px;
         }
 
         .detail-grid {
@@ -319,11 +265,11 @@
 
         .gallery-main {
             width: 100%;
-            height: 400px;
+            height: 420px;
             object-fit: cover;
             border-radius: 6px;
             margin-bottom: 15px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-light);
         }
 
         .gallery-thumbs {
@@ -332,18 +278,18 @@
         }
 
         .thumb {
-            width: 80px;
-            height: 80px;
+            width: 85px;
+            height: 85px;
             object-fit: cover;
             border-radius: 4px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-light);
             cursor: pointer;
         }
 
         .detail-info h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 6px;
         }
 
         .rating-row {
@@ -356,35 +302,40 @@
         }
 
         .stars {
-            color: var(--star-color);
+            color: var(--star-gold);
+            letter-spacing: 1px;
         }
 
         .price-large {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-main);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
         }
 
         .checklist {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .checklist li {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 15px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 500;
         }
 
+        .checklist span {
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
         .btn-wa-green {
-            background-color: #2e5339;
-            color: #fff;
+            background-color: var(--accent-green);
+            color: #ffffff;
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             border-radius: 4px;
             font-size: 15px;
             font-weight: 600;
@@ -394,112 +345,154 @@
             gap: 10px;
             border: none;
             cursor: pointer;
-            margin-bottom: 10px;
+            transition: 0.2s;
         }
 
         .btn-wa-green:hover {
-            background-color: #23402c;
+            background-color: var(--accent-green-hover);
         }
 
         .wa-subtext {
             text-align: center;
             font-size: 12px;
             color: var(--text-muted);
+            margin-top: 8px;
             margin-bottom: 30px;
         }
 
         .specs-box {
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            padding-top: 22px;
         }
 
         .specs-box h4 {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .specs-item {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
             margin-bottom: 10px;
         }
 
-        /* Review Section */
+        /* TRUST BADGES BAR */
+        .trust-section {
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 35px 0;
+            margin: 60px 0;
+            background-color: #f1efe9;
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .trust-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        /* REVIEWS */
         .reviews-section {
-            margin: 40px 0;
+            margin: 50px 0;
         }
 
         .reviews-section h3 {
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 800;
             margin-bottom: 20px;
         }
 
         .review-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 18px;
+            border: 1px solid var(--border-light);
+            padding: 20px;
             border-radius: 6px;
             display: flex;
-            gap: 15px;
+            gap: 16px;
             align-items: center;
-            max-width: 500px;
+            max-width: 520px;
         }
 
         .review-avatar {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
         }
 
         .review-author {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .review-text {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
             margin-top: 2px;
         }
 
-        /* Instagram Section */
+        /* INSTAGRAM SECTION */
         .ig-section {
             text-align: center;
-            padding: 50px 0;
+            padding: 60px 0;
         }
 
         .ig-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 12px;
-            margin: 25px 0;
+            gap: 14px;
+            margin: 30px 0;
         }
 
         .ig-grid img {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: cover;
             border-radius: 4px;
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
-            background-color: var(--primary-dark);
+            background-color: var(--nav-bg);
             color: #888888;
             text-align: center;
-            padding: 30px 20px;
-            font-size: 13px;
+            padding: 35px 20px;
+            font-size: 14px;
             border-top: 1px solid #222;
         }
 
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .hero-title {
+                font-size: 42px;
+            }
+
             .product-grid {
                 grid-template-columns: 1fr;
             }
@@ -508,16 +501,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero-title {
-                font-size: 36px;
-            }
-
             .ig-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
             nav ul {
-                display: none; /* Disembunyikan di mobile untuk kesederhanaan */
+                display: none;
             }
         }
     </style>
@@ -527,11 +516,33 @@
     <!-- Header Navigation -->
     <header>
         <div class="container nav-wrapper">
-            <div class="logo-box">
-                <!-- Jika logo.png ada di repo, gunakan tag img ini -->
-                <img src="logo.png" alt="Ritros" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
-                <span id="alt-logo" class="logo-text" style="display:none;">Ritros</span>
-            </div>
+            <!-- SVG Logo Ritros Langsung terpasang tajam & presisi -->
+            <a href="#">
+                <svg class="brand-logo-svg" viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Teks ritr (Biru Muda) -->
+                    <text x="5" y="95" font-family="'Inter', sans-serif" font-weight="800" font-size="105" fill="#38b6ff">ritr</text>
+                    
+                    <!-- Ikon Jam G-Shock menggantikan O (Merah) -->
+                    <g transform="translate(265, 15)">
+                        <!-- Strap Atas/Bawah -->
+                        <rect x="25" y="0" width="40" height="100" rx="4" fill="#e63946"/>
+                        <!-- Garis Strap -->
+                        <line x1="25" y1="12" x2="65" y2="12" stroke="#ffffff" stroke-width="3"/>
+                        <line x1="25" y1="20" x2="65" y2="20" stroke="#ffffff" stroke-width="3"/>
+                        <line x1="25" y1="80" x2="65" y2="80" stroke="#ffffff" stroke-width="3"/>
+                        <line x1="25" y1="88" x2="65" y2="88" stroke="#ffffff" stroke-width="3"/>
+                        <!-- Body Bezel G-Shock -->
+                        <circle cx="45" cy="50" r="38" fill="#e63946"/>
+                        <!-- Layar Kaca Dalam -->
+                        <circle cx="45" cy="50" r="26" fill="#ffffff"/>
+                        <circle cx="45" cy="50" r="21" fill="none" stroke="#e63946" stroke-width="4"/>
+                    </g>
+                    
+                    <!-- Teks s (Biru Muda) -->
+                    <text x="365" y="95" font-family="'Inter', sans-serif" font-weight="800" font-size="105" fill="#38b6ff">s</text>
+                </svg>
+            </a>
+
             <nav>
                 <ul>
                     <li><a href="#shop">Shop</a></li>
@@ -546,7 +557,7 @@
         </div>
     </header>
 
-    <!-- Hero Banner (Halaman Utama) -->
+    <!-- Hero Banner (Ukuran Besar & Proporsional) -->
     <section class="hero-banner">
         <div class="hero-content">
             <h1 class="hero-title">Curated Toughness.<br>Authentic Style.</h1>
@@ -554,14 +565,14 @@
         </div>
     </section>
 
-    <!-- Shop Catalog Section -->
+    <!-- Main Catalog -->
     <main class="container" id="shop">
         <div class="section-header">
             <h1>Shop G-Shock Collection</h1>
             <p>Curated & Quality G-Shock Watches.</p>
         </div>
 
-        <!-- Filter Component -->
+        <!-- Filter Bar -->
         <div class="filter-bar">
             <select class="filter-select">
                 <option>All Categories</option>
@@ -579,38 +590,34 @@
             <button class="btn-olive" style="padding: 10px 24px;">Filter</button>
         </div>
 
-        <!-- Product Grid -->
+        <!-- Catalog Grid -->
         <div class="product-grid">
-            
-            <!-- Item 1 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" class="product-img" alt="G-Shock DW-6000">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" class="product-img" alt="G-Shock DW-6900 Sniper">
                 <div class="product-body">
                     <div class="product-name">DW-6900 "Sniper"</div>
                     <div class="product-meta">Grade A | 1996</div>
                     <div class="product-footer">
                         <div class="product-price">Rp 1.250.000</div>
-                        <a href="#detail-sample" class="btn-view">View Details</a>
+                        <a href="#detail-sample" class="btn-olive" style="padding: 8px 18px; font-size: 13px;">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 2 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" class="product-img" alt="G-Shock GA-2100">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80" class="product-img" alt="G-Shock GA-2100 CasiOak">
                 <div class="product-body">
                     <div class="product-name">G-Shock GA-2100 "CasiOak"</div>
                     <div class="product-meta">Grade A | 2020</div>
                     <div class="product-footer">
                         <div class="product-price">Rp 1.450.000</div>
-                        <a href="#detail-sample" class="btn-view">View Details</a>
+                        <a href="#detail-sample" class="btn-olive" style="padding: 8px 18px; font-size: 13px;">View Details</a>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Single Product Detail Section (Contoh Tampilan Detail Produk) -->
+        <!-- Detail Produk Showcase (Sesuai Referensi) -->
         <div class="product-detail-section" id="detail-sample">
             <div class="detail-grid">
                 <div>
@@ -631,9 +638,9 @@
                     <div class="price-large">Rp 1.250.000</div>
 
                     <ul class="checklist">
-                        <li><span style="color:var(--accent-olive);">✓</span> Berfungsi Normal</li>
-                        <li><span style="color:var(--accent-olive);">✓</span> Shock & Water Resistant</li>
-                        <li><span style="color:var(--accent-olive);">✓</span> Grade A Kondisi Bagus</li>
+                        <li><span>✓</span> Berfungsi Normal</li>
+                        <li><span>✓</span> Shock & Water Resistant</li>
+                        <li><span>✓</span> Grade A Kondisi Bagus</li>
                     </ul>
 
                     <button class="btn-wa-green" onclick="orderWhatsApp('G-Shock DW-6900 Sniper', '1.250.000')">
@@ -643,15 +650,9 @@
 
                     <div class="specs-box">
                         <h4>Product Details</h4>
-                        <div class="specs-item">
-                            <span>🕒</span> Tahun Produksi: 1996
-                        </div>
-                        <div class="specs-item">
-                            <span>🔧</span> Kondisi: Grade A, Minor Scratch
-                        </div>
-                        <div class="specs-item">
-                            <span>⚡</span> Fitur: Alarm, Backlight, 200M Water Resistant
-                        </div>
+                        <div class="specs-item">🕒 Tahun Produksi: 1996</div>
+                        <div class="specs-item">🔧 Kondisi: Grade A, Minor Scratch</div>
+                        <div class="specs-item">⚡ Fitur: Alarm, Backlight, 200M Water Resistant</div>
                     </div>
                 </div>
             </div>
@@ -675,7 +676,7 @@
             </div>
         </div>
 
-        <!-- Reviews -->
+        <!-- Customer Review -->
         <div class="reviews-section">
             <h3>Customer Reviews</h3>
             <div class="review-card">
@@ -687,9 +688,9 @@
             </div>
         </div>
 
-        <!-- Instagram Community Section -->
+        <!-- Community Section -->
         <div class="ig-section">
-            <h2 style="font-size: 22px; font-weight:700;">Join Our Community</h2>
+            <h2 style="font-size: 24px; font-weight:800;">Join Our Community</h2>
             <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Follow Us on Instagram @ritros.co</p>
             
             <div class="ig-grid">
@@ -702,7 +703,6 @@
 
             <a href="https://instagram.com/ritros.co" target="_blank" class="btn-olive">Follow Us</a>
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -713,7 +713,7 @@
     </footer>
 
     <script>
-        const NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp milikmu (format 62...)
+        const NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp milikmu
 
         function orderWhatsApp(namaProduk, harga) {
             const pesan = `Halo Ritros, saya berminat untuk membeli:\n\n` +
