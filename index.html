@@ -22,6 +22,10 @@
             --star-gold: #d4a359;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +66,6 @@
             align-items: center;
         }
 
-        /* LOGO SVG INTEGRATED */
         .brand-logo-svg {
             height: 38px;
             width: auto;
@@ -102,7 +105,7 @@
             cursor: pointer;
         }
 
-        /* HERO BANNER - BESAR & PROPORSIAL */
+        /* HERO BANNER */
         .hero-banner {
             min-height: 80vh;
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)), 
@@ -149,13 +152,13 @@
             transform: translateY(-2px);
         }
 
-        /* SECTION HEADER */
+        /* SECTION HEADER GENERAL */
         .section-header {
             text-align: center;
-            padding: 60px 0 30px;
+            padding: 70px 0 35px;
         }
 
-        .section-header h1 {
+        .section-header h2 {
             font-size: 34px;
             font-weight: 800;
             letter-spacing: -0.5px;
@@ -167,7 +170,7 @@
             font-size: 15px;
         }
 
-        /* FILTER BAR */
+        /* SECTION 1: SHOP CATALOG */
         .filter-bar {
             display: flex;
             gap: 15px;
@@ -187,12 +190,11 @@
             min-width: 170px;
         }
 
-        /* CATALOG GRID */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 32px;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
         }
 
         .product-card {
@@ -248,13 +250,13 @@
             font-weight: 800;
         }
 
-        /* SINGLE DETAIL SHOWCASE (SESUAI GAMBAR REFERENSI) */
+        /* SINGLE DETAIL SHOWCASE */
         .product-detail-section {
             background: var(--card-bg);
             border: 1px solid var(--border-light);
             border-radius: 8px;
             padding: 35px;
-            margin: 50px 0 70px;
+            margin: 30px 0 70px;
         }
 
         .detail-grid {
@@ -286,7 +288,7 @@
             cursor: pointer;
         }
 
-        .detail-info h2 {
+        .detail-info h3 {
             font-size: 30px;
             font-weight: 800;
             margin-bottom: 6px;
@@ -380,12 +382,116 @@
             margin-bottom: 10px;
         }
 
+        /* SECTION 2: WHY RITROS? */
+        .why-section {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 80px 0;
+            margin-top: 40px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .why-card {
+            background: var(--bg-color);
+            padding: 30px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* SECTION 3: CONDITIONS & CARE */
+        .care-section {
+            padding: 80px 0;
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .care-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .care-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grade-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            background: var(--accent-green);
+            color: #fff;
+        }
+
+        .grade-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .grade-list li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border-light);
+        }
+
+        .grade-list li:last-child {
+            border-bottom: none;
+        }
+
         /* TRUST BADGES BAR */
         .trust-section {
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
             padding: 35px 0;
-            margin: 60px 0;
+            margin: 40px 0 60px;
             background-color: #f1efe9;
         }
 
@@ -457,7 +563,7 @@
             margin-top: 2px;
         }
 
-        /* INSTAGRAM SECTION */
+        /* INSTAGRAM COMMUNITY SECTION */
         .ig-section {
             text-align: center;
             padding: 60px 0;
@@ -493,11 +599,7 @@
                 font-size: 42px;
             }
 
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .detail-grid {
+            .product-grid, .why-grid, .care-grid, .detail-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -516,33 +618,25 @@
     <!-- Header Navigation -->
     <header>
         <div class="container nav-wrapper">
-            <!-- SVG Logo Ritros Langsung terpasang tajam & presisi -->
+            <!-- SVG Logo Ritros Presisi -->
             <a href="#">
                 <svg class="brand-logo-svg" viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Teks ritr (Biru Muda) -->
                     <text x="5" y="95" font-family="'Inter', sans-serif" font-weight="800" font-size="105" fill="#38b6ff">ritr</text>
-                    
-                    <!-- Ikon Jam G-Shock menggantikan O (Merah) -->
                     <g transform="translate(265, 15)">
-                        <!-- Strap Atas/Bawah -->
                         <rect x="25" y="0" width="40" height="100" rx="4" fill="#e63946"/>
-                        <!-- Garis Strap -->
                         <line x1="25" y1="12" x2="65" y2="12" stroke="#ffffff" stroke-width="3"/>
                         <line x1="25" y1="20" x2="65" y2="20" stroke="#ffffff" stroke-width="3"/>
                         <line x1="25" y1="80" x2="65" y2="80" stroke="#ffffff" stroke-width="3"/>
                         <line x1="25" y1="88" x2="65" y2="88" stroke="#ffffff" stroke-width="3"/>
-                        <!-- Body Bezel G-Shock -->
                         <circle cx="45" cy="50" r="38" fill="#e63946"/>
-                        <!-- Layar Kaca Dalam -->
                         <circle cx="45" cy="50" r="26" fill="#ffffff"/>
                         <circle cx="45" cy="50" r="21" fill="none" stroke="#e63946" stroke-width="4"/>
                     </g>
-                    
-                    <!-- Teks s (Biru Muda) -->
                     <text x="365" y="95" font-family="'Inter', sans-serif" font-weight="800" font-size="105" fill="#38b6ff">s</text>
                 </svg>
             </a>
 
+            <!-- Navigasi Menu Interaktif -->
             <nav>
                 <ul>
                     <li><a href="#shop">Shop</a></li>
@@ -557,7 +651,7 @@
         </div>
     </header>
 
-    <!-- Hero Banner (Ukuran Besar & Proporsional) -->
+    <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-content">
             <h1 class="hero-title">Curated Toughness.<br>Authentic Style.</h1>
@@ -565,32 +659,32 @@
         </div>
     </section>
 
-    <!-- Main Catalog -->
-    <main class="container" id="shop">
+    <!-- SECTION 1: SHOP PAGE -->
+    <section class="container" id="shop">
         <div class="section-header">
-            <h1>Shop G-Shock Collection</h1>
+            <h2>Shop G-Shock Collection</h2>
             <p>Curated & Quality G-Shock Watches.</p>
         </div>
 
         <!-- Filter Bar -->
         <div class="filter-bar">
-            <select class="filter-select">
-                <option>All Categories</option>
-                <option>DW Series</option>
-                <option>GA Series</option>
+            <select class="filter-select" id="filter-category">
+                <option value="all">All Categories</option>
+                <option value="DW">DW Series</option>
+                <option value="GA">GA Series</option>
             </select>
-            <select class="filter-select">
-                <option>Grade A</option>
-                <option>Grade B</option>
+            <select class="filter-select" id="filter-grade">
+                <option value="all">All Grades</option>
+                <option value="Grade A">Grade A</option>
+                <option value="Grade B">Grade B</option>
             </select>
-            <select class="filter-select">
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
+            <select class="filter-select" id="filter-sort">
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
             </select>
-            <button class="btn-olive" style="padding: 10px 24px;">Filter</button>
         </div>
 
-        <!-- Catalog Grid -->
+        <!-- Product Grid -->
         <div class="product-grid">
             <div class="product-card">
                 <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" class="product-img" alt="G-Shock DW-6900 Sniper">
@@ -617,7 +711,7 @@
             </div>
         </div>
 
-        <!-- Detail Produk Showcase (Sesuai Referensi) -->
+        <!-- Product Detail Showcase -->
         <div class="product-detail-section" id="detail-sample">
             <div class="detail-grid">
                 <div>
@@ -629,7 +723,7 @@
                     </div>
                 </div>
                 <div class="detail-info">
-                    <h2>G-Shock DW-6900 "Sniper"</h2>
+                    <h3>G-Shock DW-6900 "Sniper"</h3>
                     <div class="rating-row">
                         <span>Grade A | 1996</span>
                         <span class="stars">★★★★★</span>
@@ -657,55 +751,125 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Trust Badges -->
-        <div class="trust-section">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <span>Original & Tested</span>
+    <!-- SECTION 2: WHY RITROS? -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header" style="padding-top:0;">
+                <h2>Why Ritros?</h2>
+                <p>Standard kurasi tinggi untuk menjamin kepuasan pengoleksi G-Shock.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">✓</div>
+                    <h3>100% Authentic Guaranteed</h3>
+                    <p>Setiap jam telah melewati inspeksi keaslian modul, bezel, strap, hingga komponen mesin internal secara ketat.</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <span>Curated Selection</span>
+                <div class="why-card">
+                    <div class="why-icon">⚙</div>
+                    <h3>Multi-point Function Test</h3>
+                    <p>Uji ketahanan air, daya tahan baterai, alarm, tombol responsif, serta lampu layar dipastikan berfungsi 100% baik.</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <span>Fast Shipping</span>
+                <div class="why-card">
+                    <div class="why-icon">🛡</div>
+                    <h3>Transparent Grading</h3>
+                    <p>Deskripsi kondisi fisik dijelaskan secara sejujurnya tanpa penutupan kecacatan minor demi kepuasan pelanggan.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Customer Review -->
-        <div class="reviews-section">
-            <h3>Customer Reviews</h3>
-            <div class="review-card">
-                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80" class="review-avatar" alt="Adi P.">
-                <div>
-                    <div class="review-author">Adi P. <span class="stars">★</span></div>
-                    <div class="review-text">Jam keren banget, sesuai deskripsi. Respon cepat!</div>
-                </div>
-            </div>
+    <!-- SECTION 3: CONDITIONS & CARE -->
+    <section class="container care-section" id="care">
+        <div class="section-header">
+            <h2>Conditions & Care</h2>
+            <p>Panduan kelas kondisi produk dan tips perawatan jam G-Shock terkurasi.</p>
         </div>
 
-        <!-- Community Section -->
-        <div class="ig-section">
-            <h2 style="font-size: 24px; font-weight:800;">Join Our Community</h2>
-            <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Follow Us on Instagram @ritros.co</p>
-            
-            <div class="ig-grid">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&q=80">
-                <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=300&q=80">
-                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80">
-                <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=300&q=80">
-                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=300&q=80">
+        <div class="care-grid">
+            <!-- Box Grading System -->
+            <div class="care-box">
+                <h3>System Grading Ritros</h3>
+                <p style="font-size:14px; color:var(--text-muted); margin-bottom:15px;">Kami membagi koleksi kami ke dalam standar kondisi yang jelas:</p>
+                <ul class="grade-list">
+                    <li>
+                        <span class="grade-badge">Grade A</span> <strong>- Like New / Excellent</strong><br>
+                        <span style="color:var(--text-muted);">Kondisi sangat mulus (90-98%), jejak pemakaian sangat minim/hampir tidak terlihat, fungsi 100% normal.</span>
+                    </li>
+                    <li>
+                        <span class="grade-badge" style="background:#4a5d4e;">Grade B</span> <strong>- Good Condition / Vintage Look</strong><br>
+                        <span style="color:var(--text-muted);">Kondisi baik (80-89%), terdapat goresan halus minor (*minor scratches*) alami akibat pemakaian normal, seluruh fungsi 100% bekerja sempurna.</span>
+                    </li>
+                </ul>
             </div>
 
-            <a href="https://instagram.com/ritros.co" target="_blank" class="btn-olive">Follow Us</a>
+            <!-- Box Care Instructions -->
+            <div class="care-box">
+                <h3>G-Shock Maintenance Guide</h3>
+                <p style="font-size:14px; color:var(--text-muted); margin-bottom:15px;">Tips merawat jam G-Shock agar awet berpuluh-puluh tahun:</p>
+                <ul class="grade-list">
+                    <li>
+                        <strong>🧼 Pembersihan Rutin Resin:</strong><br>
+                        <span style="color:var(--text-muted);">Bersihkan bezel dan strap dari keringat dan debu menggunakan sikat halus & air hangat encer sabun netral.</span>
+                    </li>
+                    <li>
+                        <strong>💧 Perawatan Gasket Ketahanan Air:</strong><br>
+                        <span style="color:var(--text-muted);">Hindari menekan tombol jam saat berada di dalam air untuk menjaga kerapatan karet pendukung *waterproof*.</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
+    <!-- TRUST BADGES BAR -->
+    <div class="trust-section">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <span>Original & Tested</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <span>Curated Selection</span>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <span>Fast Shipping</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <section class="container reviews-section">
+        <h3>Customer Reviews</h3>
+        <div class="review-card">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&q=80" class="review-avatar" alt="Adi P.">
+            <div>
+                <div class="review-author">Adi P. <span class="stars">★</span></div>
+                <div class="review-text">Jam keren banget, sesuai deskripsi Grade A. Respon admin cepat & pengiriman aman!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM SECTION -->
+    <section class="container ig-section">
+        <h2 style="font-size: 24px; font-weight:800;">Join Our Community</h2>
+        <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Follow Us on Instagram @ritros.co</p>
+        
+        <div class="ig-grid">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&q=80">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=300&q=80">
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=300&q=80">
+            <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=300&q=80">
+            <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=300&q=80">
+        </div>
+
+        <a href="https://instagram.com/ritros.co" target="_blank" class="btn-olive">Follow Us</a>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Ritros.co. Curated & Quality G-Shock Store.</p>
@@ -713,7 +877,7 @@
     </footer>
 
     <script>
-        const NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp milikmu
+        const NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp kamu
 
         function orderWhatsApp(namaProduk, harga) {
             const pesan = `Halo Ritros, saya berminat untuk membeli:\n\n` +
