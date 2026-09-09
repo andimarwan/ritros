@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ritros.co | Authentic & Curated Used G-Shock</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">RITROS<span>.CO</span></div>
+        <nav>
+            <a href="#catalog">Katalog</a>
+            <a href="#about">Tentang</a>
+            <a href="https://instagram.com/ritros.co" target="_blank" class="ig-link">Instagram</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">CURATED G-SHOCK STORE</span>
+            <h1>TOUGH. AUTHENTIC. AFFORDABLE.</h1>
+            <p>Koleksi jam tangan G-Shock second original terkurasi dengan kondisi terbaik dan harga bersahabat.</p>
+            <a href="#catalog" class="btn-primary">Lihat Koleksi</a>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog-section">
+        <h2 class="section-title">KOLEKSI TERSEDIA</h2>
+        
+        <div class="product-grid">
+            
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <div class="product-tag">Condition 9.5/10</div>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="G-Shock DW-5600BB">
+                <div class="product-info">
+                    <h3>G-Shock DW-5600BB-1DR</h3>
+                    <p class="condition">Kelengkapan: Fullset Box & Paper</p>
+                    <div class="price">Rp 850.000</div>
+                    <button class="btn-wa" onclick="orderWhatsApp('G-Shock DW-5600BB-1DR', '850.000')">
+                        Beli via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <div class="product-tag">Condition 9/10</div>
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80" alt="G-Shock GA-2100">
+                <div class="product-info">
+                    <h3>G-Shock GA-2100-1A1 "CasiOak"</h3>
+                    <p class="condition">Kelengkapan: Unit Only (Replacement Box)</p>
+                    <div class="price">Rp 1.100.000</div>
+                    <button class="btn-wa" onclick="orderWhatsApp('G-Shock GA-2100-1A1 CasiOak', '1.100.000')">
+                        Beli via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <div class="product-tag">Condition 9.8/10</div>
+                <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?w=500&q=80" alt="G-Shock GX-56BB">
+                <div class="product-info">
+                    <h3>G-Shock GX-56BB-1DR "King Kong"</h3>
+                    <p class="condition">Kelengkapan: Fullset Tag & Tin Can</p>
+                    <div class="price">Rp 1.450.000</div>
+                    <button class="btn-wa" onclick="orderWhatsApp('G-Shock GX-56BB-1DR King Kong', '1.450.000')">
+                        Beli via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>ritros.co</strong> - Curated G-Shock Store.</p>
+    </footer>
+
+    <script>
+        // GANTI NOMOR WHATSAPP KAMU DI SINI (Gunakan format 62...)
+        const NOMOR_WA = "6281234567890"; 
+
+        function orderWhatsApp(namaProduk, harga) {
+            const pesan = `Halo ritros.co, saya ingin membeli jam tangan:\n\n` +
+                          `*Produk:* ${namaProduk}\n` +
+                          `*Harga:* Rp ${harga}\n\n` +
+                          `Apakah produk ini masih ready?`;
+            
+            const linkWA = `https://wa.me/${NOMOR_WA}?text=${encodeURIComponent(pesan)}`;
+            window.open(linkWA, '_blank');
+        }
+    </script>
+</body>
+</html>
