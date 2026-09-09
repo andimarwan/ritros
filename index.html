@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ritros.co | Authentic & Curated Used G-Shock</title>
-    <!-- Google Fonts -->
+    <title>ritros.co | Offroad & Tough Curated G-Shock</title>
+    <!-- Google Fonts: Permanent Marker (Style Brush/Grunge) & Oswald (Offroad Bold) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Permanent+Marker&family=Teko:wght@700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* Reset Basic */
@@ -18,13 +18,18 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        /* Dominan Warna Putih/Off-White dengan Efek Tekstur Offroad */
         body {
-            background-color: #0f0f0f;
-            color: #f5f5f5;
-            line-height: 1.6;
+            background-color: #f7f7f7;
+            background-image: 
+                radial-gradient(#d1d1d1 1px, transparent 1px),
+                linear-gradient(to bottom, #ffffff, #eaeaea);
+            background-size: 20px 20px, 100% 100%;
+            color: #111111;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
 
-        /* Container pembatas lebar layar */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -32,14 +37,15 @@
             padding: 0 20px;
         }
 
-        /* Navbar */
+        /* Header / Navbar Style Offroad */
         .navbar {
-            background-color: #181818;
-            border-bottom: 2px solid #e60000;
+            background-color: #ffffff;
+            border-bottom: 5px solid #111111;
             position: sticky;
             top: 0;
             z-index: 100;
             padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .nav-container {
@@ -52,14 +58,19 @@
         }
 
         .logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 28px;
+            font-family: 'Teko', sans-serif;
+            font-size: 42px;
             font-weight: 700;
             letter-spacing: 2px;
+            color: #111;
+            text-transform: uppercase;
+            line-height: 1;
         }
 
         .logo span {
-            color: #e60000;
+            color: #d90429;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 32px;
         }
 
         .nav-links {
@@ -69,86 +80,115 @@
         }
 
         .nav-links a {
-            color: #ccc;
+            color: #111;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: 0.3s;
+            font-weight: 900;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
-            color: #e60000;
+            color: #d90429;
         }
 
+        /* Tombol IG Efek Brush Edge */
         .ig-btn {
-            border: 1px solid #e60000;
-            padding: 6px 16px;
-            border-radius: 4px;
-            color: #fff !important;
-        }
-
-        .ig-btn:hover {
-            background-color: #e60000;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 75vh;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
-                        url('https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=1600&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 54px;
-            line-height: 1.1;
-            letter-spacing: 2px;
-            margin: 20px 0;
-            text-transform: uppercase;
-        }
-
-        .hero-content p {
-            color: #bbb;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        .badge {
-            background-color: #e60000;
-            color: #fff;
-            padding: 6px 14px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 36px;
-            background-color: #fff;
-            color: #000;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: #111111;
+            color: #ffffff !important;
+            padding: 8px 20px;
+            clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
             transition: 0.3s;
         }
 
-        .btn-primary:hover {
-            background-color: #e60000;
+        .ig-btn:hover {
+            background: #d90429;
+        }
+
+        /* Hero Section dengan Tampilan Bright Offroad */
+        .hero {
+            padding: 80px 20px;
+            background: #ffffff;
+            border-bottom: 4px dashed #111111;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: "RITROS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Teko', sans-serif;
+            font-size: 220px;
+            color: rgba(0, 0, 0, 0.03);
+            font-weight: 700;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* Badge Efek Brush Grunge */
+        .badge {
+            font-family: 'Permanent Marker', cursive;
+            background-color: #d90429;
             color: #fff;
+            padding: 6px 18px;
+            font-size: 16px;
+            display: inline-block;
+            transform: rotate(-2deg);
+            box-shadow: 3px 3px 0px #111;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 72px;
+            line-height: 0.95;
+            letter-spacing: 1px;
+            color: #111;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #fff, 4px 4px 0px #111;
+        }
+
+        .hero-content p {
+            color: #444;
+            font-size: 18px;
+            font-weight: 700;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        /* Tombol Cut-corner Offroad */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #111111;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #d90429;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(217, 4, 41, 0.3);
         }
 
         /* Catalog Section */
@@ -157,64 +197,86 @@
         }
 
         .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 36px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 42px;
             text-align: center;
             margin-bottom: 50px;
-            letter-spacing: 2px;
+            color: #111;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 120%;
+            height: 8px;
+            background: #d90429;
+            position: absolute;
+            bottom: -5px;
+            left: -10%;
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 20%, 95% 100%, 5% 80%);
         }
 
         /* Grid System Desktop */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 35px;
         }
 
+        /* Kartu Produk Gaya Offroad / Rough Edge */
         .product-card {
-            background-color: #181818;
-            border: 1px solid #2a2a2a;
+            background-color: #ffffff;
+            border: 3px solid #111111;
             position: relative;
-            border-radius: 6px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 8px 8px 0px #111111;
+            transition: all 0.3s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-6px);
-            border-color: #e60000;
-            box-shadow: 0 10px 20px rgba(230, 0, 0, 0.15);
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px #d90429;
+            border-color: #d90429;
         }
 
+        /* Tag Kondisi Grunge */
         .product-tag {
             position: absolute;
             top: 15px;
             left: 15px;
-            background-color: rgba(0, 0, 0, 0.85);
-            border: 1px solid #e60000;
-            color: #fff;
-            padding: 4px 10px;
-            font-size: 12px;
+            background-color: #111111;
+            color: #ffffff;
+            padding: 6px 12px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
             font-weight: 700;
+            letter-spacing: 1px;
             z-index: 2;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
         }
 
         .img-wrapper {
             width: 100%;
-            height: 300px;
+            height: 280px;
             overflow: hidden;
-            background-color: #111;
+            background-color: #f0f0f0;
+            border-bottom: 3px solid #111111;
+            position: relative;
         }
 
         .product-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.4s;
         }
 
         .product-card:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .product-info {
@@ -222,49 +284,62 @@
         }
 
         .product-info h3 {
-            font-size: 19px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 8px;
+            color: #111;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
         .product-info .condition {
             font-size: 14px;
-            color: #999;
+            color: #666;
+            font-weight: 700;
             margin-bottom: 14px;
         }
 
         .product-info .price {
-            font-size: 22px;
+            font-family: 'Teko', sans-serif;
+            font-size: 32px;
             font-weight: 700;
-            color: #e60000;
+            color: #d90429;
+            line-height: 1;
             margin-bottom: 18px;
         }
 
+        /* Tombol Beli WA Grunge */
         .btn-wa {
             width: 100%;
             padding: 14px;
             background-color: #25D366;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
+            color: #ffffff;
+            border: 2px solid #111111;
+            font-family: 'Oswald', sans-serif;
             font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             cursor: pointer;
-            font-size: 15px;
-            transition: background-color 0.3s;
+            box-shadow: 4px 4px 0px #111111;
+            transition: 0.2s;
         }
 
         .btn-wa:hover {
             background-color: #1eb856;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #111111;
         }
 
-        /* Footer */
+        /* Footer Offroad */
         footer {
             text-align: center;
             padding: 40px 20px;
-            background-color: #141414;
-            border-top: 1px solid #222;
-            color: #777;
-            font-size: 14px;
+            background-color: #ffffff;
+            border-top: 4px solid #111111;
+            color: #111;
+            font-weight: 700;
+            font-size: 15px;
         }
 
         /* Responsive Mobile & Tablet */
@@ -273,36 +348,32 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .hero-content h1 {
-                font-size: 42px;
+                font-size: 56px;
             }
         }
 
         @media screen and (max-width: 600px) {
             .hero {
-                min-height: 60vh;
+                padding: 50px 15px;
             }
             .hero-content h1 {
-                font-size: 32px;
+                font-size: 44px;
             }
             .hero-content p {
                 font-size: 15px;
             }
             .section-title {
-                font-size: 28px;
-                margin-bottom: 30px;
+                font-size: 32px;
             }
             .product-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
             }
             .img-wrapper {
-                height: 260px;
-            }
-            .navbar {
-                padding: 12px 0;
+                height: 250px;
             }
             .logo {
-                font-size: 22px;
+                font-size: 32px;
             }
             .nav-links a {
                 font-size: 13px;
@@ -327,16 +398,16 @@
     <section class="hero">
         <div class="hero-content">
             <span class="badge">CURATED G-SHOCK STORE</span>
-            <h1>TOUGH. AUTHENTIC.<br>AFFORDABLE.</h1>
-            <p>Koleksi jam tangan G-Shock second original terkurasi dengan kondisi terbaik dan harga bersahabat.</p>
-            <a href="#catalog" class="btn-primary">Lihat Koleksi</a>
+            <h1>BUILT TO LAST.<br>READY FOR OFFROAD.</h1>
+            <p>Koleksi jam tangan G-Shock second original terkurasi dengan kondisi mulus dan harga terjangkau.</p>
+            <a href="#catalog" class="btn-primary">Jelajahi Katalog</a>
         </div>
     </section>
 
     <!-- Catalog Section -->
     <section id="catalog" class="catalog-section">
         <div class="container">
-            <h2 class="section-title">KOLEKSI TERSEDIA</h2>
+            <h2 class="section-title">READY STOCK</h2>
             
             <div class="product-grid">
                 
